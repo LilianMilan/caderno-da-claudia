@@ -2,7 +2,7 @@
 
 **Cliente:** Cláudia Ramos, revendedora de cosméticos. Não manja de tecnologia.
 **Quem opera:** a Cláudia, ou a sobrinha Lu, que monta a planilha todo mês.
-**Entrada:** `vendas.csv`, passado do caderno e do WhatsApp (nov/2024 a out/2026, 318 linhas, bem bagunçado).
+**Entrada:** `vendas.csv` do case (dados fictícios fornecidos pela Data² para o teste técnico), passado do caderno e do WhatsApp (nov/2024 a out/2026, 318 linhas, bem bagunçado).
 
 ## Problema
 A Cláudia não sabe quem deve para ela nem quanto. Pagamentos parciais e atrasados se perdem no caderno. Ela também quer saber se o mês valeu a pena e começar um programa de fidelidade. Precisa funcionar todo mês com um CSV novo, sem trabalho manual de planilha.

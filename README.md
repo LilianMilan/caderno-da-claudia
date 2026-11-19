@@ -20,7 +20,7 @@ Documentos: [SPEC.md](SPEC.md) (spec de 1 página) · [DECISOES.md](DECISOES.md)
 ```bash
 npm install
 npm run dev     # http://localhost:5173. Use "Ver com a planilha de exemplo"
-npm test        # 79 testes, incluindo uma bateria no vendas.csv real
+npm test        # 79 testes, incluindo uma bateria no vendas.csv do case (dados fictícios fornecidos pela Data² para o teste técnico)
 npm run build   # site estático em dist/
 ```
 

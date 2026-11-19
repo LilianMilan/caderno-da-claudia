@@ -3,12 +3,12 @@ import { describe, expect, it } from 'vitest'
 import { analisar, lerCsv } from '..'
 import { aniversariantesDoMes } from '../relatorios'
 
-/** O vendas.csv que a Lu montou (nov/2024 a out/2026), com o "hoje" da entrega. */
+/** O vendas.csv do case (dados fictícios fornecidos pela Data² para o teste técnico), que a Lu montou (nov/2024 a out/2026), com o "hoje" da entrega. */
 const a = analisar(lerCsv(readFileSync(__dirname + '/vendas.csv', 'utf8'), 'vendas.csv'), '2026-11-19')
 const fiadoDe = (id: string) => a.fiado.porCliente.find((f) => f.clienteId === id)
 const fidDe = (id: string) => a.fidelidade.find((f) => f.clienteId === id)!
 
-describe('vendas.csv real', () => {
+describe('vendas.csv do case', () => {
   it('318 linhas viram 312 vendas: 6 repetições removidas, os 2 batons da Joana mantidos', () => {
     expect(a.vendas).toHaveLength(312)
     expect(a.pendencias.filter((p) => p.tipo === 'linha_repetida')).toHaveLength(6)
