@@ -28,6 +28,7 @@ export default function App() {
   const [aba, setAba] = useState<Aba>('Fiado')
   const [erro, setErro] = useState<string | null>(null)
   const [arrastando, setArrastando] = useState(false)
+  const [removendo, setRemovendo] = useState<string | null>(null)
   const entrada = useRef<HTMLInputElement>(null)
 
   const salvarArquivos = (novos: Arquivo[]) => {
@@ -118,12 +119,17 @@ export default function App() {
             {arquivos.map((a) => (
               <span key={a.nome} className="chip">
                 {a.nome}
-                <button
-                  aria-label={`Remover ${a.nome}`}
-                  onClick={() => confirm(`Remover "${a.nome}" do app?`) && salvarArquivos(arquivos.filter((x) => x !== a))}
-                >
-                  ×
-                </button>
+                {removendo === a.nome ? (
+                  <>
+                    <span className="miudo">remover?</span>
+                    <button onClick={() => (salvarArquivos(arquivos.filter((x) => x !== a)), setRemovendo(null))}>sim</button>
+                    <button onClick={() => setRemovendo(null)}>não</button>
+                  </>
+                ) : (
+                  <button aria-label={`Remover ${a.nome}`} onClick={() => setRemovendo(a.nome)}>
+                    ×
+                  </button>
+                )}
               </span>
             ))}
           </div>
